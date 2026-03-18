@@ -1,0 +1,49 @@
+.cc_r {
+	background-color: red;
+	color: white;
+}
+
+.cc_b {
+	background-color: blue;
+	color: white;
+}
+
+.cc_g {
+	background-color: green;
+	color: white;
+}
+
+.cc_y {
+	background-color: yellow;
+	color: black
+}
+
+.cc_w {
+	background-color: gray;
+}
+
+.cardUserList {
+	border: 1px solid black;
+}
+
+.cardUserButton {
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 5px;
+}
+
+.cardUser {
+	
+}
+
+.cardval {
+	text-align: center;
+	font-size: 40px;
+	margin: 2px;
+	
+}
+
+tr, table {
+	border: 0px solid black;
+	color: white;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NOT UNO</title>
+	<link rel="stylesheet" href="uno_style.css">
+</head>
+<body>
+
+<script src="uno_script.js"></script>
+
+<h1>Welcome to NOT UNO!</h1>
+
+<h2 id="error"></h2>
+
+<p><span id="cardNum_draw">No</span> Cards in Draw Pile</p>
+<p><span id="cardNum_disc">No</span> Cards in Discard Pile</p>
+
+<p><span id="cardNum_opp">No</span> Cards in Opponents Hand</p>
+
+<p>Card Displayed: <span id="disc_top">COLOR VALUE</span></p>
+
+<button type="button"
+onclick="startNewGame(true)" id="btn_newSolo">
+New SOLO!</button>
+<button type="button" id="btn_newGame"
+onclick="startNewGame(false)">
+New VERSUS!</button>
+
+<h2 id="debug"></h2>
+<button type="button" id="btn_draw"
+onclick="drawCard()" disabled>
+Draw 1 Card</button>
+<p>Your Hand (<span id="cardNum_user">No</span> Cards):</p>
+<!-- Insert Display here -->
+<div>
+<table id="userhand">
+</table>
+</div>
+
+</body>
+</html>
