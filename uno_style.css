@@ -1,3 +1,24 @@
+body {
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+h1 {
+	margin: auto;
+	text-align: center;
+}
+
+#text_piledraw, #text_piledisc, #text_pileopp {
+	text-align: center;
+	margin: 5px;
+}
+
+#text_cardtop {
+	text-align: center;
+}
+
 #handcontainer {
 	margin: auto;
 }
