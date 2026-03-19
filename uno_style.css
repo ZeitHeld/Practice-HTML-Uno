@@ -1,3 +1,11 @@
+#handcontainer {
+	margin: auto;
+}
+
+#userhand {
+	margin: auto;
+}
+
 .cc_r {
 	background-color: red;
 	color: white;
@@ -24,6 +32,7 @@
 
 .cardUserList {
 	border: 1px solid black;
+	border-radius: 10px;
 }
 
 .cardUserButton {
