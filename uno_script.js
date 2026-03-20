@@ -22,6 +22,8 @@ let pileOpponent = []
 const PILES = [pileDraw, pileDiscard, pileUser, pileOpponent]
 let isGameRunning = false
 let soloGame = true
+let playword = "PLAY"
+let rowCardLimit = 8
 
 
 function editInner(id, newHtml) {
@@ -128,12 +130,70 @@ function sendError(errorMessage) {
 
 function displayUserHand() {
 	let handUser = document.getElementById("userhand")
+	let handSize = pileUser.length
+	let remainingCards = handSize
+
 	handUser.innerHTML = ""
-	for (let card = 0; card < pileUser.length; card++) {
+	
+	for (rows = 1; rows <= (handSize/rowCardLimit)+1; rows++ ) {
+		rowResults = makeTableRow(remainingCards, rows)
+		handUser.appendChild(rowResults[0])
+		remainingCards -= rowResults[1]
+	}
+	
+	function makeTableRow(cardAmount, curRow) {
+		let curCard = 1
+		let cardLimit = 1
+		let pileID = (curRow-1)*rowCardLimit + (curCard-1)
+		let rowElement = document.createElement("tr")
+		
+		if (cardAmount > rowCardLimit) {
+			cardLimit = rowCardLimit
+		}
+		else {
+			cardLimit = cardAmount
+		}
+		
+		while (curCard <= cardLimit) {
+			let tabled = document.createElement("td")
+			let btn = document.createElement("button")
+			let para = document.createElement("p")
+			
+			tabled.className = "cardUserList"
+			tabled.className += " " + pileUser[pileID].getColorId()
+			
+			btn.className = "cardUserButton"
+			btn.textContent = playword
+			btn.addEventListener("click", () => {
+				placeCard(pileID, pileUser)
+			})
+			
+			para.className = "cardval"
+			para.innerHTML = pileUser[pileID].getValue().toString()
+			
+			tabled.appendChild(para)
+			tabled.appendChild(btn)
+			
+			rowElement.appendChild(tabled)
+			
+			curCard++
+			
+			pileID = (curRow-1)*rowCardLimit + (curCard-1)
+		}
+		
+		return [rowElement, cardLimit]
+		
+		
+	}
+
+	/*
+	for (let card = 0; card < handSize; card++) {
 		
 		//RED = "cc_r" ; BLUE = "cc_b" ; GREEN = "cc_g" ; YELLOW = "cc_y" ; WILD = "cc_w"
 		console.log("hand_" + `${card}`)		
 		//handUser.innerHTML += '<li> <button type="button" id="hand_' + `${card}` +'">PLACE CARD</button>' + `${pileUser[card].getNameHtml()}` +' </li>'
+		//if (card+1 % 8)
+			console.log("EIGHTER: " + ((card+1) % 8))
 		
 		let tabled = document.createElement("td")
 		tabled.className = "cardUserList"
@@ -141,7 +201,7 @@ function displayUserHand() {
         let btn = document.createElement("button")
 		btn.className = "cardUserButton"
 		
-        btn.textContent = "PLAY"
+        btn.textContent = playword
 
         btn.addEventListener("click", () => {
             placeCard(card, pileUser)
@@ -164,6 +224,8 @@ function displayUserHand() {
 		
 		//document.getElementById("hand_" + `${card}`).addEventListener("click", () => { placeCard(card,pileUser) })	
 	}
+	*/
+	
 }
 
 function displayDiscardTop() {
