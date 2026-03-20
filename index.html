@@ -5,37 +5,56 @@
 	<link rel="stylesheet" href="uno_style.css">
 </head>
 <body>
+	<script src="uno_script.js"></script>
 
-<script src="uno_script.js"></script>
+	<h1>Welcome to NOT UNO!</h1>
 
-<h1>Welcome to NOT UNO!</h1>
+	<h2 id="error"></h2>
+	<h3 id="debug"></h3>
+	
+	<div id="container_gameoptions">
+		<button type="button" onclick="startNewGame(true)" id="btn_newSolo" class="btn_gameoption">
+			New SOLO!
+		</button>
+		<button type="button" id="btn_newGame" onclick="startNewGame(false)" class="btn_gameoption">
+			New VERSUS!
+		</button>
+	</div>
 
-<h2 id="error"></h2>
+	<p id="text_piledraw"><span id="cardNum_draw">No</span> Cards in Draw Pile</p>
+	<p id="text_piledisc"><span id="cardNum_disc">No</span> Cards in Discard Pile</p>
 
-<p id="text_piledraw"><span id="cardNum_draw">No</span> Cards in Draw Pile</p>
-<p id="text_piledisc"><span id="cardNum_disc">No</span> Cards in Discard Pile</p>
+	<p id="text_pileopp"><span id="cardNum_opp">No</span> Cards in Opponents Hand</p>
 
-<p id="text_pileopp"><span id="cardNum_opp">No</span> Cards in Opponents Hand</p>
-
-<p id="text_cardtop">Card Displayed: <span id="disc_top">COLOR VALUE</span></p>
-
-<button type="button"
-onclick="startNewGame(true)" id="btn_newSolo">
-New SOLO!</button>
-<button type="button" id="btn_newGame"
-onclick="startNewGame(false)">
-New VERSUS!</button>
-
-<h2 id="debug"></h2>
-<button type="button" id="btn_draw"
-onclick="drawCard()" disabled>
-Draw 1 Card</button>
-<p>Your Hand (<span id="cardNum_user">No</span> Cards):</p>
-<!-- Insert Display here -->
-<div id="handcontainer">
-<table id="userhand">
-</table>
-</div>
+	<p id="text_cardtop">Card Displayed: <span id="disc_top">COLOR VALUE</span></p>
+	
+	<div>
+		<button type="button" id="btn_draw" onclick="drawCard()" disabled>
+			Draw 1 Card
+		</button>
+	</div>
+	<div>
+		<button type="button" class="btn_wish" id="wish_r" onclick="wishColor('red')" disabled>
+			Wish Red
+		</button>
+		<button type="button" class="btn_wish" id="wish_b" onclick="wishColor('blue')" disabled>
+			Wish Blue
+		</button>
+		<button type="button" class="btn_wish" id="wish_g" onclick="wishColor('green')" disabled>
+			Wish Green
+		</button>
+		<button type="button" class="btn_wish" id="wish_y" onclick="wishColor('yellow')" disabled>
+			Wish Yellow
+		</button>
+	</div>
+	
+	
+	<p id="handtext">Your Hand (<span id="cardNum_user">No</span> Cards):</p>
+	<!-- Insert Display here -->
+	<div id="handcontainer">
+		<table id="userhand">
+		</table>
+	</div>
 
 </body>
 </html>

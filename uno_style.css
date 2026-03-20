@@ -10,21 +10,21 @@ h1 {
 	text-align: center;
 }
 
-#text_piledraw, #text_piledisc, #text_pileopp {
-	text-align: center;
-	margin: 5px;
+tr, table {
+	border: 0px solid black;
+	color: white;
 }
 
-#text_cardtop {
-	text-align: center;
+div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-#handcontainer {
-	margin: auto;
-}
-
-#userhand {
-	margin: auto;
+.btn_gameoption {
+	height: auto;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .cc_r {
@@ -73,7 +73,50 @@ h1 {
 	
 }
 
-tr, table {
-	border: 0px solid black;
-	color: white;
+.btn_wish {
+	width: 100px;
+	height: auto;
+	text-align: center;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+#text_piledraw, #text_piledisc, #text_pileopp {
+	text-align: center;
+	margin: 5px;
+}
+
+#text_cardtop {
+	text-align: center;
+}
+
+#handcontainer {
+	width: 500px;
+	margin: auto;
+	flex-wrap: wrap;
+}
+
+#userhand {
+	margin: auto;
+}
+
+#handtext {
+	text-align: center;
+}
+
+#btn_draw {
+	margin-bottom: 10px;
+}
+
+#container_gameoptions {
+	margin-bottom: 20px;
+}
+
+#error {
+	color: red;
+}
+
+#debug {
+	color: purple;
+	text-align: center;
 }
